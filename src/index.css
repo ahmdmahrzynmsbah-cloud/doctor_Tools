@@ -1,0 +1,55 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --color-bg-surface-2: #F1F5F9;
+  --color-primary-base: #2180B2;
+  --color-text-primary: #1E293B;
+  --color-text-secondary: #475569;
+}
+
+.dark {
+  --color-bg-surface-2: #1E293B;
+  --color-primary-base: #38BDF8;
+  --color-text-primary: #F1F5F9;
+  --color-text-secondary: #94A3B8;
+}
+
+@layer base {
+  html,
+  body,
+  * {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  *::-webkit-scrollbar {
+    display: none;
+    width: 0;
+    height: 0;
+  }
+
+  body {
+    font-family: 'Cairo', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+}
+
+.font-cairo {
+  font-family: 'Cairo', system-ui, -apple-system, sans-serif;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.pb-safe {
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
